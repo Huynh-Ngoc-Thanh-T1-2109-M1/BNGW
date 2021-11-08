@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork</title>
+</head>
+<body>
+    <h2>Enter details of your account</h2> <hr>
+    <form action="" name="formLOG" id="formLOG"
+    onsubmit="checkLogin()">
+    First name: <br>
+    <input type="text" name="txtFirst" id="txtFirst" required autofocus> <br> <br>
+
+    Last name: <br>
+    <input type="text" name="txtLast" id="txtLast" required> <br> <br>
+
+    Email: <br>
+    <input type="email" name="txtMail" id="txtMail"> <br> <br>
+
+    Age: <br>
+    <input type="text" name="txtAge" id="txtAge"> <br> <br>
+
+    Are you employed
+    <input type="checkbox" name="s1" value="Yes">Yes
+    <input type="checkbox" name="s2" value="No">No
+    <hr>
+
+    <input type="submit" value="OK" name="btnOK">
+    <input type="reset" value="Cancel">
+    </form>
+
+    <script>
+        function checkLogin(){
+            var first = formLOG.txtFirst.value;
+            var last = formLOG.txtLast.value;
+            if(first != "Aptech" || last != "FPT"){
+                alert("Invalid account!");
+                return;
+            }
+
+            var x = document.getElementById("txtAge").value;
+            if(x<18 || x>30){
+                alert("Age is not valid! (18-30)");
+                return;
+            }
+
+            else{
+                alert("Login Sucessful!");
+            }
+        }
+    </script>
+    
+</body>
+</html>
