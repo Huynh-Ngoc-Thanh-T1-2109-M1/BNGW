@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #nav{
+            background-color: orange;
+        }
+        a{
+            text-decoration: none;
+            font-size: larger;
+            color: white;
+            padding: 95px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+        form{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" style="float: left;">
+        <img src="images/logo.png">
+    </div>
+
+    <br> <br> <br> <br>
+
+    <div id="nav">
+        <a href="home.html">Homepage</a>
+        <a href="">Utilities</a>
+        <a href="">Share</a>
+        <a href="">Knowledge</a>
+        <a href="#">Register</a>
+        <a href="">Login</a>
+        <a href="">About us</a>
+    </div>
+    
+    <form action="" name="formLOG" id="formLOG"
+    onsubmit="checkLogin()">
+    First name: (*)
+    <input type="text" name="txtFirst" id="txtFirst" autofocus> <br> <br>
+
+    Last name: (*)
+    <input type="text" name="txtLast" id="txtLast"> <br> <br>
+
+    Country:
+    <select name="Country" id="sltcountry">
+        <option value="Vietnam">Vietnam</option>
+        <option value="India">India</option>
+        <option value="Japan">Japan</option>
+    </select> <br> <br>
+
+    Gender:
+    <input type="radio" name="gen" value="Male" checked>Male
+    <input type="radio" name="gen" value="Female">Female
+    <br> <br>
+
+    Email: (*)
+    <input type="email" name="txtMail" id="txtMail"> <br> <br>
+
+    Telephone (*)
+    <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4|" value="123-456-7890"> <br> <br>
+
+    
+
+    <input type="submit" value="Register" name="btnOK">
+    <input type="reset" value="Reset">
+    </form>
+
+    <script>
+        function checkLogin(){
+            var first = formLOG.txtFirst.value;
+            var last = formLOG.txtLast.value;
+            var email = formLOG.txtMail.value;
+            var tel = formLOG.phone.value;
+            if(first == ""){
+                alert("The First name cannot be left blank!");
+                return false;
+            }
+
+            if(last == ""){
+                alert("The Last name cannot be left blank!");
+                return false;
+            }
+
+            if(email == ""){
+                alert("The Email cannot be left blank!");
+                return false;
+            }
+
+            if(tel == ""){
+                alert("The Telephone cannot be left blank!");
+                return false;
+            }
+
+            else{
+                alert("Congratulation! Your information has been sent successfully!");
+            }
+        }
+    </script>
+</body>
+</html>
